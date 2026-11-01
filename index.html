@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#252a22">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="30 Comeback">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>30 — Comeback</title>
+<style>
+:root{--bg:#f4f0e8;--card:#fffdf8;--ink:#262a23;--muted:#77796f;--olive:#59634a;--bronze:#9b7650;--line:#e7e0d4;--good:#647653;--danger:#a35e50}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:env(safe-area-inset-top) 0 calc(82px + env(safe-area-inset-bottom))}
+header{padding:24px 20px 16px;background:#252a22;color:#f7f2e9;border-radius:0 0 26px 26px}
+.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c6b394}.brand{font:600 29px Georgia,serif;margin:7px 0}.sub{font-size:13px;color:#d0cec5}
+main{max-width:680px;margin:auto;padding:16px}
+.tabs{display:flex;gap:7px;overflow:auto;padding:4px 0 14px;scrollbar-width:none}.tabs button{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:99px;padding:10px 14px;white-space:nowrap;font-size:13px}.tabs button.active{background:var(--olive);color:white;border-color:var(--olive)}
+.panel{display:none}.panel.active{display:block}.section-title{font:600 22px Georgia,serif;margin:9px 0 4px}.muted{color:var(--muted);font-size:13px;line-height:1.45}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 3px 14px #32281708}
+.card h3{font-size:15px;margin:0 0 12px}.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.pill{font-size:11px;color:var(--olive);background:#edf0e7;padding:5px 9px;border-radius:99px}
+.task{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--line);font-size:14px}.task:first-of-type{border-top:0}.task input{width:19px;height:19px;accent-color:var(--olive);margin:0;flex-shrink:0}.task.done span{text-decoration:line-through;color:#929287}
+.progress{height:8px;background:#e9e4d9;border-radius:9px;overflow:hidden;margin-top:10px}.progress>i{display:block;height:100%;background:var(--olive);width:0;transition:width .2s}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#f0ece3;border-radius:14px;padding:13px}.stat strong{display:block;font:600 22px Georgia,serif}.stat small{color:var(--muted);font-size:11px}
+input[type=text],input[type=number],input[type=date],textarea,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:#fffefa;color:var(--ink);font:inherit;margin:5px 0 10px}
+label{font-size:12px;color:var(--muted);display:block;margin-top:8px}
+button.action{background:var(--olive);color:white;border:0;border-radius:11px;padding:11px 14px;font-size:13px;font-weight:600}button.secondary{background:#eee9df;color:var(--ink)}
+button:active{transform:scale(.98)}
+.navbottom{position:fixed;bottom:0;left:0;right:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fffdf8ed;backdrop-filter:blur(14px);border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:11px}
+.quote{font:italic 17px Georgia,serif;line-height:1.45;color:#4e5941}
+.smallbtn{border:0;background:transparent;color:var(--bronze);font-size:12px;padding:8px}
+footer{padding:18px 4px;color:var(--muted);font-size:11px;line-height:1.5}
+</style>
+</head>
+<body>
+<header>
+ <div class="eyebrow">Une nouvelle étape commence</div>
+ <div class="brand">30 — COMEBACK</div>
+ <div class="sub">Construire doucement. Tenir ses promesses. Reprendre sa place.</div>
+</header>
+<main>
+ <div class="tabs" id="tabs">
+  <button class="active" data-tab="today">Aujourd'hui</button><button data-tab="money">Finances</button><button data-tab="body">Physique</button><button data-tab="mind">Mental & Shiva</button><button data-tab="atno">ATNO Design</button>
+ </div>
+
+ <section class="panel active" id="today">
+  <div class="row between"><div><div class="section-title">Ton quotidien</div><div class="muted" id="todayDate"></div></div><span class="pill" id="dayCount">0 / 0 fait</span></div>
+  <div class="card">
+   <h3>Les essentiels du jour</h3>
+   <div id="dailyTasks"></div>
+   <div class="progress"><i id="dailyProgress"></i></div>
+   <p class="muted" id="dailyMessage">Un pas après l'autre. La régularité vaut mieux que la perfection.</p>
+  </div>
+  <div class="stats">
+   <div class="stat"><strong id="streak">0</strong><small>Jours suivis</small></div>
+   <div class="stat"><strong id="weekDone">0%</strong><small>Objectifs cochés aujourd'hui</small></div>
+  </div>
+  <div class="card"><div class="quote">« Je n'ai pas besoin de tout régler aujourd'hui. Je dois seulement faire le prochain pas. »</div></div>
+ </section>
+
+ <section class="panel" id="money">
+  <div class="section-title">Reprendre le contrôle</div><p class="muted">Un suivi simple. Mets les chiffres à jour après chaque salaire ou prélèvement.</p>
+  <div class="card">
+   <h3>Ma situation du moment</h3>
+   <label>Solde du compte principal (€)</label><input id="balance" type="number" step=".01" placeholder="Ex. -694.39">
+   <label>Argent disponible en espèces (€)</label><input id="cash" type="number" step=".01" placeholder="Ex. 50">
+   <label>Tickets restaurant (€)</label><input id="meal" type="number" step=".01" placeholder="Ex. 119">
+   <label>Prochaine date de salaire</label><input id="payday" type="date">
+   <button class="action" onclick="saveMoney()">Enregistrer</button>
+  </div>
+  <div class="card">
+   <h3>Mes dettes à suivre</h3>
+   <div id="debts"></div>
+   <label>Ajouter / modifier une dette (nom)</label><input id="debtName" type="text" placeholder="Ex. Alterna">
+   <label>Montant restant (€)</label><input id="debtAmount" type="number" step=".01" placeholder="0">
+   <button class="action" onclick="addDebt()">Ajouter la dette</button>
+  </div>
+  <div class="card"><h3>Règle du moment</h3><p class="muted">Priorité : logement, nourriture, transport, factures indispensables et prélèvements obligatoires. Ensuite seulement, remboursements anticipés. Garde un petit coussin avant d'accélérer la boule de neige.</p></div>
+ </section>
+
+ <section class="panel" id="body">
+  <div class="section-title">Prendre soin du corps</div><p class="muted">Objectif : retrouver de l'énergie et progresser sans te punir.</p>
+  <div class="card">
+   <h3>Suivi personnel</h3>
+   <label>Poids (kg)</label><input id="weight" type="number" step=".1" placeholder="68">
+   <label>Sommeil (heures)</label><input id="sleep" type="number" step=".5" placeholder="7">
+   <label>Énergie aujourd'hui /10</label><input id="energy" type="number" min="1" max="10" placeholder="5">
+   <button class="action" onclick="saveBody()">Enregistrer</button>
+  </div>
+  <div class="card"><h3>Routine simple</h3>
+   <div class="task"><input type="checkbox" data-check="water"><span>Boire régulièrement dans la journée</span></div>
+   <div class="task"><input type="checkbox" data-check="walk"><span>Marche douce ou mobilité si je me sens bien</span></div>
+   <div class="task"><input type="checkbox" data-check="protein"><span>Prévoir une source de protéines à chaque repas</span></div>
+   <div class="task"><input type="checkbox" data-check="skin"><span>Routine visage matin / soir + SPF le matin</span></div>
+   <p class="muted">Si tu as encore des malaises, pertes de connaissance ou secousses nocturnes, fais le point avec un professionnel de santé avant de reprendre un entraînement intense.</p>
+  </div>
+ </section>
+
+ <section class="panel" id="mind">
+  <div class="section-title">Retrouver ton calme</div><p class="muted">Pas besoin de faire semblant d'aller bien. Tu peux avancer à ton rythme.</p>
+  <div class="card">
+   <h3>Mon état aujourd'hui</h3>
+   <label>Comment je me sens ?</label><select id="mood"><option value="">Choisir…</option><option>Bien</option><option>Correct</option><option>Stressé</option><option>Triste</option><option>Épuisé</option><option>En colère</option></select>
+   <label>Ce que j'ai sur le cœur</label><textarea id="journal" rows="4" placeholder="Écris sans te juger…"></textarea>
+   <button class="action" onclick="saveMind()">Enregistrer mon journal</button>
+  </div>
+  <div class="card"><h3>Mon moment avec Shiva</h3>
+   <div class="quote">Om Namah Shivaya</div>
+   <p class="muted">Prends deux minutes pour respirer, réciter ton mantra ou simplement rester en silence.</p>
+   <div class="task"><input type="checkbox" data-check="shiva"><span>J'ai pris mon moment de prière / recueillement</span></div>
+  </div>
+  <div class="card"><h3>Quand ça devient trop lourd</h3><p class="muted">Ne reste pas seul avec une détresse intense. Contacte une personne de confiance ou un professionnel. En France, le 3114 est gratuit, 24h/24, pour les pensées suicidaires ; en danger immédiat, appelle le 15 ou le 112.</p></div>
+ </section>
+
+ <section class="panel" id="atno">
+  <div class="section-title">Construire ATNO</div><p class="muted">Un petit travail régulier, sans dépenses inutiles.</p>
+  <div class="card"><h3>Mes actions de la semaine</h3>
+   <div class="task"><input type="checkbox" data-check="portfolio"><span>Améliorer une page du portfolio</span></div>
+   <div class="task"><input type="checkbox" data-check="project"><span>Créer ou finaliser un visuel retail</span></div>
+   <div class="task"><input type="checkbox" data-check="contact"><span>Identifier un prospect pertinent</span></div>
+   <div class="task"><input type="checkbox" data-check="post"><span>Publier un contenu utile ou un projet</span></div>
+   <div class="task"><input type="checkbox" data-check="admin"><span>Faire un point sur les tâches administratives</span></div>
+  </div>
+  <div class="card"><h3>Mon idée / prochaine action</h3><textarea id="atnoNote" rows="4" placeholder="La prochaine petite étape pour ATNO…"></textarea><button class="action" onclick="saveAtno()">Enregistrer</button></div>
+  <div class="card"><h3>Direction artistique</h3><p class="muted">Ivoire · sable · travertin · bronze · olive · charbon<br>Architecture intérieure et retail premium.</p></div>
+ </section>
+ <footer>Les informations sont enregistrées localement dans ce navigateur sur cet appareil. Pense à exporter tes données régulièrement : elles ne sont pas synchronisées automatiquement avec iCloud.</footer>
+</main>
+<div class="navbottom">30 — COMEBACK · privé · sur ton iPhone</div>
+<script>
+const KEY='comeback30-v1';
+const defaults={checks:{},money:{},body:{},mind:{},debts:[],atno:''};
+let data={...defaults};
+try{data={...defaults,...JSON.parse(localStorage.getItem(KEY)||'{}')};}catch(e){}
+const tasks=[['wake','Me lever sans repousser le réveil'],['breakfast','Prendre un petit-déjeuner simple'],['work','Faire ma journée de travail'],['meal','Manger correctement et prévoir demain'],['reset','Ranger 10 minutes'],['care','Prendre soin de moi (visage / hygiène)'],['shiva','Quelques minutes de calme ou de prière'],['sleep','Me préparer à dormir à l’heure']];
+function persist(){localStorage.setItem(KEY,JSON.stringify(data));}
+function todayKey(){return new Date().toISOString().slice(0,10)}
+function renderTasks(){let root=document.getElementById('dailyTasks');root.innerHTML='';tasks.forEach(([id,label])=>{let on=!!data.checks[todayKey()+'-'+id];let div=document.createElement('label');div.className='task'+(on?' done':'');div.innerHTML=`<input type="checkbox" ${on?'checked':''}><span>${label}</span>`;div.querySelector('input').onchange=e=>{data.checks[todayKey()+'-'+id]=e.target.checked;persist();renderTasks();};root.appendChild(div)});let done=tasks.filter(([id])=>data.checks[todayKey()+'-'+id]).length;let pct=Math.round(done/tasks.length*100);document.getElementById('dayCount').textContent=`${done} / ${tasks.length} fait`;document.getElementById('dailyProgress').style.width=pct+'%';document.getElementById('weekDone').textContent=pct+'%';}
+function renderDebts(){let root=document.getElementById('debts');root.innerHTML='';data.debts.forEach((d,i)=>{let row=document.createElement('div');row.className='task';row.innerHTML=`<span style="flex:1">${d.name} — ${Number(d.amount).toFixed(2)} €</span><button class="smallbtn">Supprimer</button>`;row.querySelector('button').onclick=()=>{data.debts.splice(i,1);persist();renderDebts()};root.appendChild(row)});if(!data.debts.length)root.innerHTML='<p class="muted">Ajoute tes dettes et mets les montants à jour. Aucun chiffre n’est prérempli.</p>'}
+function fill(){for(let [k,v] of Object.entries(data.money))if(document.getElementById(k))document.getElementById(k).value=v;for(let [k,v] of Object.entries(data.body))if(document.getElementById(k))document.getElementById(k).value=v;document.getElementById('mood').value=data.mind.mood||'';document.getElementById('journal').value=data.mind.journal||'';document.getElementById('atnoNote').value=data.atno||'';document.querySelectorAll('[data-check]').forEach(el=>{el.checked=!!data.checks[todayKey()+'-'+el.dataset.check];el.onchange=()=>{data.checks[todayKey()+'-'+el.dataset.check]=el.checked;persist();el.parentElement.classList.toggle('done',el.checked)}})}
+function saveMoney(){['balance','cash','meal','payday'].forEach(k=>data.money[k]=document.getElementById(k).value);persist();alert('Situation enregistrée.')}
+function saveBody(){['weight','sleep','energy'].forEach(k=>data.body[k]=document.getElementById(k).value);persist();alert('Suivi enregistré.')}
+function saveMind(){data.mind={mood:document.getElementById('mood').value,journal:document.getElementById('journal').value};persist();alert('Journal enregistré.')}
+function saveAtno(){data.atno=document.getElementById('atnoNote').value;persist();alert('Action ATNO enregistrée.')}
+function addDebt(){let name=document.getElementById('debtName').value.trim(),amount=Number(document.getElementById('debtAmount').value);if(!name||!Number.isFinite(amount)||amount<0){alert('Entre un nom et un montant valide.');return}data.debts.push({name,amount});persist();document.getElementById('debtName').value='';document.getElementById('debtAmount').value='';renderDebts()}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab))});
+document.getElementById('todayDate').textContent=new Intl.DateTimeFormat('fr-FR',{weekday:'long',day:'numeric',month:'long'}).format(new Date());
+renderTasks();renderDebts();fill();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script>
+</body></html>
