@@ -1,181 +1,145 @@
 <!doctype html>
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#252a22">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="30 Comeback">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icons/icon-192.png">
-<title>30 — Comeback</title>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#252a22"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="30 Comeback">
+<link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>30 — Comeback V3</title>
 <style>
-:root{--bg:#f4f0e8;--card:#fffdf8;--ink:#262a23;--muted:#77796f;--olive:#59634a;--bronze:#9b7650;--line:#e7e0d4;--good:#647653;--danger:#a35e50}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:env(safe-area-inset-top) 0 calc(82px + env(safe-area-inset-bottom))}
-header{padding:24px 20px 16px;background:#252a22;color:#f7f2e9;border-radius:0 0 26px 26px}
-.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c6b394}.brand{font:600 29px Georgia,serif;margin:7px 0}.sub{font-size:13px;color:#d0cec5}
-main{max-width:680px;margin:auto;padding:16px}
-.tabs{display:flex;gap:7px;overflow:auto;padding:4px 0 14px;scrollbar-width:none}.tabs button{border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:99px;padding:10px 14px;white-space:nowrap;font-size:13px}.tabs button.active{background:var(--olive);color:white;border-color:var(--olive)}
-.panel{display:none}.panel.active{display:block}.section-title{font:600 22px Georgia,serif;margin:9px 0 4px}.muted{color:var(--muted);font-size:13px;line-height:1.45}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 3px 14px #32281708}
-.card h3{font-size:15px;margin:0 0 12px}.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.pill{font-size:11px;color:var(--olive);background:#edf0e7;padding:5px 9px;border-radius:99px}
-.task{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--line);font-size:14px}.task:first-of-type{border-top:0}.task input{width:19px;height:19px;accent-color:var(--olive);margin:0;flex-shrink:0}.task.done span{text-decoration:line-through;color:#929287}
-.progress{height:8px;background:#e9e4d9;border-radius:9px;overflow:hidden;margin-top:10px}.progress>i{display:block;height:100%;background:var(--olive);width:0;transition:width .2s}
-.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#f0ece3;border-radius:14px;padding:13px}.stat strong{display:block;font:600 22px Georgia,serif}.stat small{color:var(--muted);font-size:11px}
-input[type=text],input[type=number],input[type=date],textarea,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:#fffefa;color:var(--ink);font:inherit;margin:5px 0 10px}
-label{font-size:12px;color:var(--muted);display:block;margin-top:8px}
-button.action{background:var(--olive);color:white;border:0;border-radius:11px;padding:11px 14px;font-size:13px;font-weight:600}button.secondary{background:#eee9df;color:var(--ink)}
-button:active{transform:scale(.98)}
-.navbottom{position:fixed;bottom:0;left:0;right:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fffdf8ed;backdrop-filter:blur(14px);border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:11px}
-.quote{font:italic 17px Georgia,serif;line-height:1.45;color:#4e5941}
-.smallbtn{border:0;background:transparent;color:var(--bronze);font-size:12px;padding:8px}
-footer{padding:18px 4px;color:var(--muted);font-size:11px;line-height:1.5}
-</style>
-</head>
-<body>
-<header>
- <div class="eyebrow">Une nouvelle étape commence</div>
- <div class="brand">30 — COMEBACK</div>
- <div class="sub">Construire doucement. Tenir ses promesses. Reprendre sa place.</div>
-</header>
+:root{--bg:#f3efe6;--paper:#fffdf8;--ink:#292c25;--muted:#77796f;--olive:#59634a;--bronze:#9b7650;--line:#e6dfd3;--red:#a35e50}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;padding:env(safe-area-inset-top) 0 calc(82px + env(safe-area-inset-bottom))}
+header{background:#252a22;color:#f7f2e9;padding:24px 19px 18px;border-radius:0 0 24px 24px}.eyebrow{color:#c6b394;font-size:10px;letter-spacing:2px;text-transform:uppercase}.brand{font:600 29px Georgia,serif;margin:7px 0}.sub{font-size:12px;color:#d3d0c7}
+main{max-width:720px;margin:auto;padding:14px}.tabs{display:flex;gap:7px;overflow:auto;padding:3px 0 13px;scrollbar-width:none}.tabs button{border:1px solid var(--line);background:var(--paper);border-radius:99px;padding:10px 13px;color:var(--muted);white-space:nowrap}.tabs button.active{background:var(--olive);color:white;border-color:var(--olive)}
+.panel{display:none}.panel.active{display:block}.h{font:600 22px Georgia,serif;margin:8px 0 4px}.muted{color:var(--muted);font-size:12px;line-height:1.5}.card{background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:15px;margin:11px 0}.card h3{font-size:14px;margin:0 0 10px}.row{display:flex;align-items:center;gap:9px}.between{justify-content:space-between}.tag{background:#edf0e7;color:var(--olive);border-radius:99px;padding:5px 9px;font-size:10px}
+.dayselect{display:flex;gap:6px;overflow:auto;padding:9px 0}.dayselect button{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:8px 11px;font-size:12px}.dayselect button.active{background:#e7eadf;border-color:var(--olive);color:var(--olive);font-weight:700}
+.slot{display:grid;grid-template-columns:65px 1fr;gap:10px;padding:12px 0;border-top:1px solid var(--line)}.slot:first-child{border-top:0}.time{font-weight:700;color:var(--bronze);font-size:13px}.slot strong{display:block;font-size:13px;margin-bottom:3px}.slot p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.slot label{display:flex;gap:8px;align-items:center;margin-top:7px;font-size:11px;color:var(--olive)}input[type=checkbox]{width:18px;height:18px;accent-color:var(--olive);flex-shrink:0}
+.progress{height:8px;background:#e9e4d9;border-radius:9px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:var(--olive)}
+button.action{border:0;background:var(--olive);color:white;padding:10px 13px;border-radius:10px;font-weight:600;font-size:12px}button.soft{border:1px solid var(--line);background:#f1ede4;color:var(--ink);padding:9px 12px;border-radius:10px;font-size:12px}
+input[type=text],input[type=number],input[type=date],textarea,select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px;background:#fffefa;color:var(--ink);font:inherit;margin:5px 0 10px}label.field{display:block;color:var(--muted);font-size:11px;margin-top:7px}
+.task{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line);font-size:13px}.task:first-of-type{border-top:0}.task.done span{text-decoration:line-through;color:#99998e}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{background:#efebe2;border-radius:13px;padding:12px}.stat b{display:block;font:600 21px Georgia,serif}.stat small{color:var(--muted);font-size:10px}
+.notice{background:#f3eee4;border-left:3px solid var(--bronze);padding:11px;border-radius:8px;font-size:12px;line-height:1.5}
+footer{font-size:10px;color:var(--muted);padding:15px 3px;line-height:1.5}.bottom{position:fixed;bottom:0;left:0;right:0;background:#fffdf8ed;backdrop-filter:blur(12px);text-align:center;padding:11px 8px calc(11px + env(safe-area-inset-bottom));border-top:1px solid var(--line);font-size:10px;color:var(--muted)}
+</style></head><body>
+<header><div class="eyebrow">Un pas après l'autre</div><div class="brand">30 — COMEBACK</div><div class="sub">Ton programme personnel · V3 détaillée · avance sans te brutaliser</div></header>
 <main>
- <div class="tabs" id="tabs">
-  <button class="active" data-tab="today">Aujourd'hui</button><button data-tab="money">Finances</button><button data-tab="body">Physique</button><button data-tab="mind">Mental & Shiva</button><button data-tab="atno">ATNO Design</button>
- </div>
+<nav class="tabs" id="tabs">
+<button class="active" data-tab="plan">Planning</button><button data-tab="finance">Finances</button><button data-tab="fitness">Physique</button><button data-tab="care">Skincare & grooming</button><button data-tab="mind">Mental & Shiva</button><button data-tab="atno">ATNO</button><button data-tab="review">Bilan</button>
+</nav>
 
- <section class="panel active" id="today">
-  <div class="row between"><div><div class="section-title">Ton quotidien</div><div class="muted" id="todayDate"></div></div><span class="pill" id="dayCount">0 / 0 fait</span></div>
-  <div class="card">
-   <h3>Les essentiels du jour</h3>
-   <div id="dailyTasks"></div>
-   <div class="progress"><i id="dailyProgress"></i></div>
-   <p class="muted" id="dailyMessage">Un pas après l'autre. La régularité vaut mieux que la perfection.</p>
-  </div>
-  <div class="card">
-   <div class="row between"><h3 style="margin:0">Mon planning horaire</h3><span class="pill">Lundi – vendredi</span></div>
-   <p class="muted">Une journée organisée autour de ton travail, sans te surcharger.</p>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">04h40</strong><span>Réveil, eau, toilette et mise en route</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">05h00</strong><span>Petit-déjeuner et routine visage</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">05h25</strong><span>S'habiller, préparer le sac et vérifier le repas</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">05h45</strong><span>Départ pour le travail</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">07h00–15h00</strong><span>Travail — pause déjeuner et hydratation</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">15h00–16h00</strong><span>Trajet retour</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">16h00</strong><span>Goûter, souffler et décompresser</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">16h30</strong><span>Une priorité personnelle : démarches, courses ou rangement</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">17h30</strong><span>Temps physique doux ou marche si tu te sens bien</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">18h00</strong><span>Préparer et prendre le dîner</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">19h00</strong><span>Douche, soin du visage et moment avec Shiva</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">19h30</strong><span>Préparer vêtements, sac et repas du lendemain</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">20h00</strong><span>Écrans au calme, détente et coucher qui approche</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">20h45</strong><span>Au lit — priorité au sommeil</span></div>
-  </div>
-  <div class="card">
-   <div class="row between"><h3 style="margin:0">Week-end</h3><span class="pill">Samedi & dimanche</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">07h30</strong><span>Réveil tranquille et petit-déjeuner</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">09h00</strong><span>Courses, ménage ou tâches personnelles</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">10h30</strong><span>Bloc ATNO Design ou projet personnel</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">12h30</strong><span>Déjeuner et vraie pause</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">14h00</strong><span>Temps libre, sortie ou activité douce</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">17h00</strong><span>Préparer quelques repas et organiser la semaine</span></div>
-   <div class="task"><strong style="min-width:88px;color:var(--bronze)">20h45</strong><span>Routine calme et sommeil</span></div>
-   <p class="muted">Le week-end reste souple : garde du temps pour vivre, voir tes proches et récupérer.</p>
-  </div>
-  <div class="stats">
-   <div class="stat"><strong id="streak">0</strong><small>Jours suivis</small></div>
-   <div class="stat"><strong id="weekDone">0%</strong><small>Objectifs cochés aujourd'hui</small></div>
-  </div>
-  <div class="card"><div class="quote">« Je n'ai pas besoin de tout régler aujourd'hui. Je dois seulement faire le prochain pas. »</div></div>
- </section>
+<section class="panel active" id="plan">
+<div class="row between"><div><div class="h">Mon programme</div><div class="muted" id="date"></div></div><span class="tag" id="count">0 / 0</span></div>
+<div class="dayselect" id="days"></div>
+<div class="card"><div class="row between"><b id="dayTitle">Aujourd'hui</b><span class="muted" id="pct">0%</span></div><div class="progress" style="margin:10px 0"><i id="bar"></i></div><div class="muted">Coche chaque étape quand elle est faite. Si tu rates un créneau, passe au suivant : ne transforme pas un retard en journée perdue.</div></div>
+<div class="card"><h3>Planning heure par heure</h3><div id="schedule"></div></div>
+<div class="card"><h3>Règle anti-skip</h3><p class="muted">1. Fais la prochaine action, pas les trois actions ratées. 2. Si tu es épuisé, utilise la version minimale : 5 minutes suffisent pour garder le rythme. 3. Un jour imparfait n'annule pas ta semaine.</p><button class="soft" onclick="clearDay()">Réinitialiser les coches de ce jour</button></div>
+</section>
 
- <section class="panel" id="money">
-  <div class="section-title">Reprendre le contrôle</div><p class="muted">Un suivi simple. Mets les chiffres à jour après chaque salaire ou prélèvement.</p>
-  <div class="card">
-   <h3>Ma situation du moment</h3>
-   <label>Solde du compte principal (€)</label><input id="balance" type="number" step=".01" placeholder="Ex. -694.39">
-   <label>Argent disponible en espèces (€)</label><input id="cash" type="number" step=".01" placeholder="Ex. 50">
-   <label>Tickets restaurant (€)</label><input id="meal" type="number" step=".01" placeholder="Ex. 119">
-   <label>Prochaine date de salaire</label><input id="payday" type="date">
-   <button class="action" onclick="saveMoney()">Enregistrer</button>
-  </div>
-  <div class="card">
-   <h3>Mes dettes à suivre</h3>
-   <div id="debts"></div>
-   <label>Ajouter / modifier une dette (nom)</label><input id="debtName" type="text" placeholder="Ex. Alterna">
-   <label>Montant restant (€)</label><input id="debtAmount" type="number" step=".01" placeholder="0">
-   <button class="action" onclick="addDebt()">Ajouter la dette</button>
-  </div>
-  <div class="card"><h3>Règle du moment</h3><p class="muted">Priorité : logement, nourriture, transport, factures indispensables et prélèvements obligatoires. Ensuite seulement, remboursements anticipés. Garde un petit coussin avant d'accélérer la boule de neige.</p></div>
- </section>
+<section class="panel" id="finance">
+<div class="h">Finances & boule de neige</div><p class="muted">On sécurise d'abord le mois. Aucun remboursement anticipé ne doit te laisser sans nourriture, transport ou marge de sécurité.</p>
+<div class="card"><h3>Photo financière à actualiser</h3>
+<label class="field">Solde compte principal (€)</label><input id="balance" type="number" step=".01">
+<label class="field">Espèces (€)</label><input id="cash" type="number" step=".01">
+<label class="field">Tickets restaurant (€)</label><input id="meal" type="number" step=".01">
+<label class="field">Prochain salaire prévu</label><input id="payday" type="date">
+<label class="field">Salaire net attendu (€)</label><input id="salary" type="number" step=".01">
+<button class="action" onclick="saveFields('money',['balance','cash','meal','payday','salary'])">Enregistrer</button></div>
+<div class="card"><h3>Crédits & dettes</h3><div id="debts"></div>
+<label class="field">Nom du crédit / dette</label><input id="dn" type="text" placeholder="Ex. Alterna">
+<label class="field">Capital restant (€)</label><input id="da" type="number" step=".01">
+<label class="field">Mensualité (€)</label><input id="dm" type="number" step=".01">
+<button class="action" onclick="addDebt()">Ajouter</button></div>
+<div class="card"><h3>Mes dépenses à venir</h3><div id="bills"></div>
+<label class="field">Libellé</label><input id="bn" type="text" placeholder="Ex. Électricité">
+<label class="field">Montant (€)</label><input id="ba" type="number" step=".01">
+<label class="field">Date de prélèvement</label><input id="bd" type="date">
+<button class="action" onclick="addBill()">Ajouter une échéance</button></div>
+<div class="notice">Ordre de priorité : loyer et charges essentielles → alimentation et transport → prélèvements contractuels → petite réserve → remboursement accéléré de la plus petite dette. On actualisera les montants ensemble avant de fixer une somme supplémentaire.</div>
+</section>
 
- <section class="panel" id="body">
-  <div class="section-title">Prendre soin du corps</div><p class="muted">Objectif : retrouver de l'énergie et progresser sans te punir.</p>
-  <div class="card">
-   <h3>Suivi personnel</h3>
-   <label>Poids (kg)</label><input id="weight" type="number" step=".1" placeholder="68">
-   <label>Sommeil (heures)</label><input id="sleep" type="number" step=".5" placeholder="7">
-   <label>Énergie aujourd'hui /10</label><input id="energy" type="number" min="1" max="10" placeholder="5">
-   <button class="action" onclick="saveBody()">Enregistrer</button>
-  </div>
-  <div class="card"><h3>Routine simple</h3>
-   <div class="task"><input type="checkbox" data-check="water"><span>Boire régulièrement dans la journée</span></div>
-   <div class="task"><input type="checkbox" data-check="walk"><span>Marche douce ou mobilité si je me sens bien</span></div>
-   <div class="task"><input type="checkbox" data-check="protein"><span>Prévoir une source de protéines à chaque repas</span></div>
-   <div class="task"><input type="checkbox" data-check="skin"><span>Routine visage matin / soir + SPF le matin</span></div>
-   <p class="muted">Si tu as encore des malaises, pertes de connaissance ou secousses nocturnes, fais le point avec un professionnel de santé avant de reprendre un entraînement intense.</p>
-  </div>
- </section>
+<section class="panel" id="fitness">
+<div class="h">Physique & énergie</div><p class="muted">Objectif : recomposition progressive, force et énergie. Pas de punition, pas de séances extrêmes.</p>
+<div class="card"><h3>Mes mesures</h3><label class="field">Poids (kg)</label><input id="weight" type="number" step=".1"><label class="field">Tour de taille (cm)</label><input id="waist" type="number" step=".5"><label class="field">Sommeil (heures)</label><input id="sleep" type="number" step=".5"><label class="field">Énergie /10</label><input id="energy" type="number" min="1" max="10"><button class="action" onclick="saveFields('body',['weight','waist','sleep','energy'])">Enregistrer</button></div>
+<div class="card"><h3>Base quotidienne</h3>
+<div class="task"><input type="checkbox" data-task="water"><span>Boire régulièrement au fil de la journée</span></div>
+<div class="task"><input type="checkbox" data-task="protein"><span>Inclure une source de protéines à chaque repas (œufs, skyr, lentilles, pois chiches, tofu/paneer…)</span></div>
+<div class="task"><input type="checkbox" data-task="walk"><span>Marche tranquille ou mobilité si je me sens bien</span></div>
+<div class="task"><input type="checkbox" data-task="prep"><span>Préparer une option simple pour le repas du lendemain</span></div></div>
+<div class="card"><h3>Progression sportive — pour l'instant</h3><p class="muted">En attendant un avis médical pour les pertes de connaissance / malaises évoqués et les secousses nocturnes : pas de HIIT, charges lourdes ni entraînement intense. Si aucun symptôme et si cela t'est confortable, marche douce et mobilité légère uniquement. Après validation médicale, on construira un programme progressif avec tes haltères de 5 kg.</p></div>
+</section>
 
- <section class="panel" id="mind">
-  <div class="section-title">Retrouver ton calme</div><p class="muted">Pas besoin de faire semblant d'aller bien. Tu peux avancer à ton rythme.</p>
-  <div class="card">
-   <h3>Mon état aujourd'hui</h3>
-   <label>Comment je me sens ?</label><select id="mood"><option value="">Choisir…</option><option>Bien</option><option>Correct</option><option>Stressé</option><option>Triste</option><option>Épuisé</option><option>En colère</option></select>
-   <label>Ce que j'ai sur le cœur</label><textarea id="journal" rows="4" placeholder="Écris sans te juger…"></textarea>
-   <button class="action" onclick="saveMind()">Enregistrer mon journal</button>
-  </div>
-  <div class="card"><h3>Mon moment avec Shiva</h3>
-   <div class="quote">Om Namah Shivaya</div>
-   <p class="muted">Prends deux minutes pour respirer, réciter ton mantra ou simplement rester en silence.</p>
-   <div class="task"><input type="checkbox" data-check="shiva"><span>J'ai pris mon moment de prière / recueillement</span></div>
-  </div>
-  <div class="card"><h3>Quand ça devient trop lourd</h3><p class="muted">Ne reste pas seul avec une détresse intense. Contacte une personne de confiance ou un professionnel. En France, le 3114 est gratuit, 24h/24, pour les pensées suicidaires ; en danger immédiat, appelle le 15 ou le 112.</p></div>
- </section>
+<section class="panel" id="care">
+<div class="h">Skincare, cheveux & grooming</div><div class="card"><h3>Matin</h3>
+<div class="task"><input type="checkbox" data-task="amwash"><span>Nettoyage doux ou rinçage si peau sensible</span></div>
+<div class="task"><input type="checkbox" data-task="amserum"><span>Sérum déjà toléré (ne pas multiplier les actifs)</span></div>
+<div class="task"><input type="checkbox" data-task="amcream"><span>Crème hydratante si nécessaire</span></div>
+<div class="task"><input type="checkbox" data-task="spf"><span>Protection solaire SPF 50</span></div></div>
+<div class="card"><h3>Soir</h3>
+<div class="task"><input type="checkbox" data-task="pmwash"><span>Nettoyer le visage pour retirer SPF / impuretés</span></div>
+<div class="task"><input type="checkbox" data-task="pmcream"><span>Crème barrière / hydratante</span></div>
+<div class="task"><input type="checkbox" data-task="hair"><span>Minoxidil uniquement selon la prescription / notice et les conseils du dermatologue ; mains lavées, cuir chevelu sec, laisser sécher et éviter le contact avec animaux</span></div>
+<div class="task"><input type="checkbox" data-task="groom"><span>Barbe, cheveux, ongles et vêtements propres : entretien léger</span></div>
+<p class="muted">Si irritation persistante, palpitations, vertiges ou autre effet inhabituel avec un produit, arrête et demande conseil à un professionnel de santé.</p></div>
+</section>
 
- <section class="panel" id="atno">
-  <div class="section-title">Construire ATNO</div><p class="muted">Un petit travail régulier, sans dépenses inutiles.</p>
-  <div class="card"><h3>Mes actions de la semaine</h3>
-   <div class="task"><input type="checkbox" data-check="portfolio"><span>Améliorer une page du portfolio</span></div>
-   <div class="task"><input type="checkbox" data-check="project"><span>Créer ou finaliser un visuel retail</span></div>
-   <div class="task"><input type="checkbox" data-check="contact"><span>Identifier un prospect pertinent</span></div>
-   <div class="task"><input type="checkbox" data-check="post"><span>Publier un contenu utile ou un projet</span></div>
-   <div class="task"><input type="checkbox" data-check="admin"><span>Faire un point sur les tâches administratives</span></div>
-  </div>
-  <div class="card"><h3>Mon idée / prochaine action</h3><textarea id="atnoNote" rows="4" placeholder="La prochaine petite étape pour ATNO…"></textarea><button class="action" onclick="saveAtno()">Enregistrer</button></div>
-  <div class="card"><h3>Direction artistique</h3><p class="muted">Ivoire · sable · travertin · bronze · olive · charbon<br>Architecture intérieure et retail premium.</p></div>
- </section>
- <footer>Les informations sont enregistrées localement dans ce navigateur sur cet appareil. Pense à exporter tes données régulièrement : elles ne sont pas synchronisées automatiquement avec iCloud.</footer>
-</main>
-<div class="navbottom">30 — COMEBACK · privé · sur ton iPhone</div>
+<section class="panel" id="mind">
+<div class="h">Mental & spiritualité</div><div class="card"><h3>Check-in du soir</h3><label class="field">Humeur</label><select id="mood"><option value="">Choisir…</option><option>Très bien</option><option>Bien</option><option>Moyen</option><option>Stressé</option><option>Triste</option><option>Épuisé</option></select>
+<label class="field">Qu'est-ce qui m'a pesé aujourd'hui ?</label><textarea id="journal" rows="3"></textarea>
+<label class="field">Une chose dont je suis fier aujourd'hui</label><textarea id="win" rows="2"></textarea>
+<button class="action" onclick="saveMind()">Enregistrer mon check-in</button></div>
+<div class="card"><h3>Moment avec Shiva</h3><div style="font:italic 20px Georgia,serif;color:var(--olive)">Om Namah Shivaya</div><p class="muted">2 à 5 minutes : respiration tranquille, mantra ou silence. Pas d'obligation de performance.</p><div class="task"><input type="checkbox" data-task="shiva"><span>J'ai pris mon moment de prière / recueillement</span></div></div>
+<div class="notice">Si tu traverses une détresse qui devient dangereuse ou que tu as peur de te faire du mal, contacte immédiatement une personne de confiance et les secours. En France : 3114 (24h/24), ou 15 / 112 en urgence.</div>
+</section>
+
+<section class="panel" id="atno">
+<div class="h">ATNO Design</div><p class="muted">Construire le portfolio et trouver des clients sans dépenser inutilement.</p>
+<div class="card"><h3>Routine hebdomadaire ATNO</h3>
+<div class="task"><input type="checkbox" data-task="atportfolio"><span>Portfolio : améliorer une page ou un projet</span></div>
+<div class="task"><input type="checkbox" data-task="atvisual"><span>Créer un visuel retail / concept / rendu</span></div>
+<div class="task"><input type="checkbox" data-task="atprospect"><span>Identifier et contacter un prospect ciblé</span></div>
+<div class="task"><input type="checkbox" data-task="atpost"><span>Préparer ou publier un contenu Instagram</span></div>
+<div class="task"><input type="checkbox" data-task="atsite"><span>Améliorer une section du site ATNO</span></div>
+<label class="field">Prochaine action concrète</label><textarea id="atnote" rows="3" placeholder="Ex. Finaliser le rendu boutique..."></textarea><button class="action" onclick="saveAtno()">Enregistrer</button></div>
+<div class="card"><h3>Identité de marque</h3><p class="muted">Ivoire · sable · travertin / pierre · bronze · olive · charbon. Positionnement : architecture intérieure et retail premium. Chaque semaine : une amélioration concrète, pas dix projets commencés.</p></div>
+</section>
+
+<section class="panel" id="review">
+<div class="h">Bilan & constance</div><div class="grid"><div class="stat"><b id="doneToday">0%</b><small>Planning accompli aujourd'hui</small></div><div class="stat"><b id="doneAll">0</b><small>Cases cochées aujourd'hui</small></div></div>
+<div class="card"><h3>Bilan de fin de semaine</h3><label class="field">Ce qui a bien fonctionné</label><textarea id="good" rows="3"></textarea><label class="field">Ce que je veux ajuster</label><textarea id="adjust" rows="3"></textarea><label class="field">Ma priorité de la semaine prochaine</label><textarea id="priority" rows="2"></textarea><button class="action" onclick="saveReview()">Enregistrer le bilan</button></div>
+<div class="card"><h3>Rappel</h3><p class="muted">Le but n'est pas de cocher 100 % tous les jours. Le but est de reprendre le fil sans culpabiliser quand la vie ne suit pas le planning.</p><button class="soft" onclick="exportData()">Exporter une sauvegarde de mes données</button></div>
+</section>
+<footer>Données conservées localement dans le navigateur de cet appareil. Pas de compte ni de synchronisation automatique. Exporte une sauvegarde régulièrement. Les horaires et tâches sont personnalisables au fil de ta réalité.</footer>
+</main><div class="bottom">30 — COMEBACK · ta progression, à ton rythme</div>
+
 <script>
-const KEY='comeback30-v1';
-const defaults={checks:{},money:{},body:{},mind:{},debts:[],atno:''};
-let data={...defaults};
-try{data={...defaults,...JSON.parse(localStorage.getItem(KEY)||'{}')};}catch(e){}
-const tasks=[['wake','Me lever sans repousser le réveil'],['breakfast','Prendre un petit-déjeuner simple'],['work','Faire ma journée de travail'],['meal','Manger correctement et prévoir demain'],['reset','Ranger 10 minutes'],['care','Prendre soin de moi (visage / hygiène)'],['shiva','Quelques minutes de calme ou de prière'],['sleep','Me préparer à dormir à l’heure']];
-function persist(){localStorage.setItem(KEY,JSON.stringify(data));}
-function todayKey(){return new Date().toISOString().slice(0,10)}
-function renderTasks(){let root=document.getElementById('dailyTasks');root.innerHTML='';tasks.forEach(([id,label])=>{let on=!!data.checks[todayKey()+'-'+id];let div=document.createElement('label');div.className='task'+(on?' done':'');div.innerHTML=`<input type="checkbox" ${on?'checked':''}><span>${label}</span>`;div.querySelector('input').onchange=e=>{data.checks[todayKey()+'-'+id]=e.target.checked;persist();renderTasks();};root.appendChild(div)});let done=tasks.filter(([id])=>data.checks[todayKey()+'-'+id]).length;let pct=Math.round(done/tasks.length*100);document.getElementById('dayCount').textContent=`${done} / ${tasks.length} fait`;document.getElementById('dailyProgress').style.width=pct+'%';document.getElementById('weekDone').textContent=pct+'%';}
-function renderDebts(){let root=document.getElementById('debts');root.innerHTML='';data.debts.forEach((d,i)=>{let row=document.createElement('div');row.className='task';row.innerHTML=`<span style="flex:1">${d.name} — ${Number(d.amount).toFixed(2)} €</span><button class="smallbtn">Supprimer</button>`;row.querySelector('button').onclick=()=>{data.debts.splice(i,1);persist();renderDebts()};root.appendChild(row)});if(!data.debts.length)root.innerHTML='<p class="muted">Ajoute tes dettes et mets les montants à jour. Aucun chiffre n’est prérempli.</p>'}
-function fill(){for(let [k,v] of Object.entries(data.money))if(document.getElementById(k))document.getElementById(k).value=v;for(let [k,v] of Object.entries(data.body))if(document.getElementById(k))document.getElementById(k).value=v;document.getElementById('mood').value=data.mind.mood||'';document.getElementById('journal').value=data.mind.journal||'';document.getElementById('atnoNote').value=data.atno||'';document.querySelectorAll('[data-check]').forEach(el=>{el.checked=!!data.checks[todayKey()+'-'+el.dataset.check];el.onchange=()=>{data.checks[todayKey()+'-'+el.dataset.check]=el.checked;persist();el.parentElement.classList.toggle('done',el.checked)}})}
-function saveMoney(){['balance','cash','meal','payday'].forEach(k=>data.money[k]=document.getElementById(k).value);persist();alert('Situation enregistrée.')}
-function saveBody(){['weight','sleep','energy'].forEach(k=>data.body[k]=document.getElementById(k).value);persist();alert('Suivi enregistré.')}
-function saveMind(){data.mind={mood:document.getElementById('mood').value,journal:document.getElementById('journal').value};persist();alert('Journal enregistré.')}
-function saveAtno(){data.atno=document.getElementById('atnoNote').value;persist();alert('Action ATNO enregistrée.')}
-function addDebt(){let name=document.getElementById('debtName').value.trim(),amount=Number(document.getElementById('debtAmount').value);if(!name||!Number.isFinite(amount)||amount<0){alert('Entre un nom et un montant valide.');return}data.debts.push({name,amount});persist();document.getElementById('debtName').value='';document.getElementById('debtAmount').value='';renderDebts()}
+const KEY='comeback30-v3';let S={checks:{},money:{},body:{},debts:[],bills:[],mind:{},atno:'',review:{}};
+try{S={...S,...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){}
+const weekdays=['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
+const plans={
+0:[['04:40','Réveil','Se lever, boire un verre d’eau, ouvrir les volets. Pas de téléphone pendant les 10 premières minutes.'],['04:50','Hygiène & préparation','Toilette, dents, déodorant, s’habiller. Préparer sac, clés et repas.'],['05:10','Petit-déjeuner','Option rapide : skyr/soja + flocons d’avoine + fruit, ou œufs + pain. Café si souhaité.'],['05:30','Dernières vérifications','Vérifier repas, bouteille d’eau, badge, transport.'],['05:45','Départ','Trajet vers le travail. Garder une marge, éviter de courir.'],['07:00–15:00','Travail','Priorités professionnelles. Pause repas et hydratation. Noter les tâches importantes pour vider la tête.'],['15:00–16:00','Retour','Trajet retour. Si fatigue, pas de tâche exigeante pendant le trajet.'],['16:00','Décompression','Se changer, boire, 10–15 min de pause sans culpabiliser.'],['16:20','Repas / collation','Repas préparé ou collation équilibrée selon la faim.'],['16:45','Bloc du jour','30–45 min sur la priorité du jour (voir rotation hebdomadaire).'],['17:30','Mouvement doux','Marche tranquille ou mobilité seulement si aucun symptôme et selon avis médical.'],['18:00','Douche & soin','Douche, skincare du soir si c’est l’heure, vêtements prêts pour demain.'],['18:30','Dîner','Repas simple : légumes + protéines + féculent selon faim.'],['19:00','Temps personnel','Appel, lecture, détente, prière ou activité qui fait du bien.'],['19:45','Préparer demain','Repas, sac, tenue, vérifier agenda et dépenses du lendemain.'],['20:00','Ralentir','Écrans réduits, lumière douce, respiration / mantra si envie.'],['20:45','Coucher','Objectif de sommeil. Si une étape a sauté, on ne décale pas tout le coucher.']],
+1:[['04:40','Réveil','Routine identique : eau, toilette, petit-déjeuner, sac.'],['05:45','Départ','Trajet.'],['07:00–15:00','Travail','Travail, pause et hydratation.'],['15:00–16:00','Retour','Trajet retour.'],['16:00','Pause & collation','Décompression et collation si faim.'],['16:30–17:15','ATNO — création','Un seul objectif : portfolio, rendu ou visuel.'],['17:15','Pause','Bouger un peu, boire, reposer les yeux.'],['17:30','Marche douce / mobilité','Seulement si autorisé et sans symptôme.'],['18:00','Douche & soins','Routine simple.'],['18:30','Dîner','Repas simple et rassasiant.'],['19:00','Spiritualité / détente','Quelques minutes de mantra ou activité calme.'],['19:45','Préparer mercredi','Repas, tenue, sac ou espace télétravail.'],['20:45','Coucher','Protéger le sommeil.']],
+2:[['04:40','Réveil','Si télétravail confirmé, garder un réveil moins précipité possible ; adapter le créneau.'],['05:00','Routine du matin','Toilette, petit-déjeuner, soins, aérer et ranger 5 minutes.'],['07:00–15:00','Travail / télétravail','Vérifier les horaires réellement prévus. Pauses régulières et déjeuner loin de l’écran.'],['15:00','Fin de travail','Fermer les outils et noter la première tâche de demain.'],['15:15','Pause','Déjeuner tardif ou collation selon l’organisation.'],['16:00','Maison & administratif','Une petite tâche utile : linge, courrier, papiers ou budget.'],['16:45','Préparation repas','Préparer une base pour 1–2 repas.'],['17:30','Temps calme','Marche douce ou repos selon état de santé.'],['18:00','Douche & soins','Skincare, grooming léger.'],['18:30','Dîner','Repas.'],['19:00','Temps personnel','Shiva, lecture, appel ou détente.'],['19:45','Préparer jeudi','Tenue, sac, repas.'],['20:45','Coucher','Sommeil prioritaire.']],
+3:[['04:40','Réveil','Eau, toilette, petit-déjeuner.'],['05:45','Départ','Trajet.'],['07:00–15:00','Travail','Travail et pauses.'],['15:00–16:00','Retour','Trajet.'],['16:00','Décompression','Pause courte.'],['16:30–17:15','Finances / administratif','Vérifier échéances, classer un document, mettre à jour une dépense. Pas de décision de remboursement impulsive.'],['17:15','Pause','Boisson et repos.'],['17:30','Mouvement doux','Seulement si autorisé et sans symptôme.'],['18:00','Douche & soins','Routine simple.'],['18:30','Dîner','Repas.'],['19:00','Moment Shiva','Mantra ou prière à la maison si tu le souhaites.'],['19:30','Temps libre','Repos et plaisir sans culpabilité.'],['19:45','Préparer vendredi','Sac, tenue, repas.'],['20:45','Coucher','Sommeil.']],
+4:[['04:40','Réveil','Routine matinale habituelle.'],['05:45','Départ','Trajet.'],['07:00–15:00','Travail','Terminer la semaine professionnelle.'],['15:00–16:00','Retour','Trajet.'],['16:00','Pause','Décompression.'],['16:30–17:00','Bilan finances','Vérifier salaire reçu ou date estimée, prélèvements à venir et argent réellement disponible.'],['17:00','Temps libre','Repos, appel ou activité agréable.'],['18:00','Douche & soins','Routine.'],['18:30','Dîner','Repas.'],['19:00','Déconnexion','Pas de gros chantier ATNO. Profiter de la soirée.'],['20:45','Coucher ou détente','Garder le sommeil en priorité, sans obligation de tenir une heure stricte le vendredi.']],
+5:[['07:00','Réveil tranquille','Pas de réveil à 4h40 sauf contrainte. Eau, toilette et petit-déjeuner.'],['08:00','Rangement','20–30 min : linge, cuisine, surfaces. Une zone à la fois.'],['09:00','Courses / budget','Liste avant d’acheter. Priorité repas simples et stock utile.'],['10:30','Temps libre','Pause, promenade ou activité plaisante.'],['11:30','Déjeuner','Repas maison.'],['12:30–14:00','ATNO — bloc profond','Portfolio, projet retail ou site. Une seule priorité.'],['14:00','Pause','Déconnexion et boisson.'],['15:00','Vie personnelle','Famille, amis, sorties ou repos.'],['17:30','Préparation repas','Préparer quelques bases pour la semaine si énergie disponible.'],['18:30','Dîner','Repas.'],['19:30','Grooming / détente','Cheveux, barbe, soins ou loisir.'],['22:00','Coucher indicatif','Adapter à la fatigue et aux activités.']],
+6:[['07:30','Réveil tranquille','Eau, petit-déjeuner, pas de précipitation.'],['08:30','Bilan semaine','Regarder ce qui a été fait sans se juger. Choisir 3 priorités réalistes.'],['09:00','Planifier la semaine','Horaires, rendez-vous, prélèvements, repas et tenues.'],['10:00','Temps spirituel / personnel','Prière, temple si possible, promenade ou silence.'],['11:30','Déjeuner','Repas.'],['12:30','Repos','Vraie pause.'],['14:00','ATNO léger','Préparer la prochaine action ou programmer un contenu.'],['15:00','Préparation repas','Bases simples pour 2–3 jours, sans obligation de tout cuisiner.'],['17:00','Préparer lundi','Sac, vêtements, repas, transport et réveil.'],['18:30','Dîner','Repas léger selon faim.'],['19:30','Déconnexion','Écrans réduits, routine du soir.'],['20:45','Coucher','Revenir au rythme de travail.']]
+};
+const rotation={0:'Organisation personnelle et repos',1:'ATNO : création / portfolio',2:'Maison, repas et administratif',3:'Finances et spiritualité',4:'Bilan léger et détente',5:'ATNO : bloc profond + vie personnelle',6:'Bilan hebdo et préparation'};
+function key(day,i){return day+'-'+i}
+function drawDay(d){document.querySelectorAll('#days button').forEach(b=>b.classList.toggle('active',+b.dataset.d===d));document.getElementById('dayTitle').textContent=weekdays[d]+' — '+rotation[d];let root=document.getElementById('schedule');root.innerHTML='';let list=plans[d];list.forEach((x,i)=>{let div=document.createElement('div');div.className='slot';let checked=!!S.checks[key(d,i)];div.innerHTML=`<div class="time">${x[0]}</div><div><strong>${x[1]}</strong><p>${x[2]}</p><label><input type="checkbox" ${checked?'checked':''}> Créneau effectué</label></div>`;div.querySelector('input').onchange=e=>{S.checks[key(d,i)]=e.target.checked;save();drawDay(d)};root.appendChild(div)});let n=list.filter((x,i)=>S.checks[key(d,i)]).length,p=Math.round(n/list.length*100);document.getElementById('count').textContent=n+' / '+list.length;document.getElementById('pct').textContent=p+'%';document.getElementById('bar').style.width=p+'%';document.getElementById('doneToday').textContent=p+'%';document.getElementById('doneAll').textContent=n}
+function save(){localStorage.setItem(KEY,JSON.stringify(S))}
+function clearDay(){let d=selected;plans[d].forEach((x,i)=>delete S.checks[key(d,i)]);save();drawDay(d)}
+let selected=(new Date().getDay()+6)%7;let daybox=document.getElementById('days');weekdays.forEach((x,i)=>{let b=document.createElement('button');b.textContent=x;b.dataset.d=i;b.onclick=()=>{selected=i;drawDay(i)};daybox.appendChild(b)});
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab))});
-document.getElementById('todayDate').textContent=new Intl.DateTimeFormat('fr-FR',{weekday:'long',day:'numeric',month:'long'}).format(new Date());
-renderTasks();renderDebts();fill();
-if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
-</script>
-</body></html>
+document.getElementById('date').textContent=new Intl.DateTimeFormat('fr-FR',{weekday:'long',day:'numeric',month:'long'}).format(new Date());
+function saveFields(group,ids){ids.forEach(id=>S[group][id]=document.getElementById(id).value);save();alert('Enregistré.')}
+function fill(){['balance','cash','meal','payday','salary'].forEach(id=>document.getElementById(id).value=S.money[id]||'');['weight','waist','sleep','energy'].forEach(id=>document.getElementById(id).value=S.body[id]||'');document.getElementById('mood').value=S.mind.mood||'';document.getElementById('journal').value=S.mind.journal||'';document.getElementById('win').value=S.mind.win||'';document.getElementById('atnote').value=S.atno||'';['good','adjust','priority'].forEach(id=>document.getElementById(id).value=S.review[id]||'');document.querySelectorAll('[data-task]').forEach(el=>{el.checked=!!S.checks['task-'+el.dataset.task];el.parentElement.classList.toggle('done',el.checked);el.onchange=()=>{S.checks['task-'+el.dataset.task]=el.checked;save();el.parentElement.classList.toggle('done',el.checked)}})}
+function addDebt(){let name=dn.value.trim(),amount=+da.value,monthly=+dm.value;if(!name||amount<0){alert('Renseigne un nom et un montant.');return}S.debts.push({name,amount,monthly});save();dn.value=da.value=dm.value='';renderLists()}
+function addBill(){let name=bn.value.trim(),amount=+ba.value,date=bd.value;if(!name||amount<0){alert('Renseigne un libellé et un montant.');return}S.bills.push({name,amount,date});save();bn.value=ba.value=bd.value='';renderLists()}
+function renderLists(){debts.innerHTML=S.debts.length?'':'<p class="muted">Aucune dette renseignée pour le moment.</p>';S.debts.forEach((d,i)=>{let r=document.createElement('div');r.className='task';r.innerHTML=`<span style="flex:1">${d.name} · ${Number(d.amount).toFixed(2)} € restant · ${Number(d.monthly||0).toFixed(2)} €/mois</span><button class="soft">Retirer</button>`;r.querySelector('button').onclick=()=>{S.debts.splice(i,1);save();renderLists()};debts.appendChild(r)});bills.innerHTML=S.bills.length?'':'<p class="muted">Aucune échéance renseignée.</p>';S.bills.forEach((d,i)=>{let r=document.createElement('div');r.className='task';r.innerHTML=`<span style="flex:1">${d.name} · ${Number(d.amount).toFixed(2)} € · ${d.date||'date non précisée'}</span><button class="soft">Retirer</button>`;r.querySelector('button').onclick=()=>{S.bills.splice(i,1);save();renderLists()};bills.appendChild(r)})}
+function saveMind(){S.mind={mood:mood.value,journal:journal.value,win:win.value};save();alert('Check-in enregistré.')}
+function saveAtno(){S.atno=atnote.value;save();alert('Action enregistrée.')}
+function saveReview(){['good','adjust','priority'].forEach(id=>S.review[id]=document.getElementById(id).value);save();alert('Bilan enregistré.')}
+function exportData(){let blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='30-comeback-sauvegarde.json';a.click();URL.revokeObjectURL(url)}
+drawDay(selected);fill();renderLists();
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+</script></body></html>
